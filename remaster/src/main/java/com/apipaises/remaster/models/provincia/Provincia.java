@@ -19,6 +19,6 @@ public class Provincia {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nombre;
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     private Pais pais;
 }

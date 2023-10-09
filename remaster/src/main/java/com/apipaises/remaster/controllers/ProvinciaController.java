@@ -1,10 +1,10 @@
 package com.apipaises.remaster.controllers;
 
-import com.apipaises.remaster.models.pais.Pais;
 import com.apipaises.remaster.models.provincia.DTO.DatosProvincia;
 import com.apipaises.remaster.models.provincia.DTO.DatosProvinciaAndPais;
 import com.apipaises.remaster.models.provincia.Provincia;
 import com.apipaises.remaster.models.provincia.ProvinciaRepository;
+import com.apipaises.remaster.service.ProvinciaServiceIMP;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -17,12 +17,12 @@ import java.util.List;
 public class ProvinciaController {
 
     @Autowired
-    private ProvinciaRepository provinciaRepository;
+    private ProvinciaServiceIMP provinciaServiceIMP;
 
     @GetMapping("/{pais_nombre}")
     @Transactional
     public ResponseEntity<List<DatosProvincia>> ListadoProvinciaPorPais(@PathVariable String pais_nombre){
-        List<Provincia> request = provinciaRepository
+        List<Provincia> request = provinciaServiceIMP
                 .findAll()
                 .stream()
                 .filter(prov -> prov.getPais().getNombre().equals(pais_nombre))
@@ -33,6 +33,6 @@ public class ProvinciaController {
 
     @GetMapping("/all")
     public ResponseEntity<List<DatosProvinciaAndPais>> listadoTodasLasProvincias(){
-        return ResponseEntity.ok(provinciaRepository.findAll().stream().map(DatosProvinciaAndPais::new).toList());
+        return ResponseEntity.ok(provinciaServiceIMP.findAll().stream().map(DatosProvinciaAndPais::new).toList());
     }
 }
