@@ -1,0 +1,15 @@
+com\apipaises\remaster\models\provincia\Provincia.class
+com\apipaises\remaster\service\ProvinciaService.class
+com\apipaises\remaster\models\provincia\DTO\DatosProvinciaAndPais.class
+com\apipaises\remaster\models\provincia\DTO\DatosProvincia.class
+com\apipaises\remaster\models\pais\DTO\DatosPais.class
+com\apipaises\remaster\RemasterApplication.class
+com\apipaises\remaster\controllers\PaisController.class
+com\apipaises\remaster\models\pais\Pais.class
+com\apipaises\remaster\models\pais\PaisRepository.class
+com\apipaises\remaster\models\pais\DTO\DatosPaisNombre.class
+com\apipaises\remaster\controllers\ProvinciaController.class
+com\apipaises\remaster\service\PaisServiceIMP.class
+com\apipaises\remaster\service\PaisService.class
+com\apipaises\remaster\models\provincia\ProvinciaRepository.class
+com\apipaises\remaster\service\ProvinciaServiceIMP.class
